@@ -120,14 +120,14 @@ export default function LoanProducts() {
           transition={{ duration: 0.8 }}
         >
           <div className="bg-cream p-8 rounded-2xl max-w-4xl mx-auto">
-            <h3 className="text-2xl font-poppins font-bold mb-4">FDM Partnership</h3>
+            <h3 className="text-2xl font-poppins font-bold mb-4">Trusted Partners</h3>
             <p className="text-warm-gray mb-4">
-              All applications are processed through our partnership with Fidelity Direct Mortgage, 
+              All applications are processed through our network of trusted lending partners, 
               ensuring reliable funding and competitive rates for our specialized loan programs.
             </p>
             <div className="flex items-center justify-center space-x-2">
               <CheckCircle className="h-5 w-5 text-green-500" />
-              <span className="text-navy font-semibold">Backed by FDM Home</span>
+              <span className="text-navy font-semibold">Institutional Backing</span>
             </div>
           </div>
         </motion.div>

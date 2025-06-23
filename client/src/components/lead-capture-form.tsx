@@ -119,7 +119,7 @@ export default function LeadCaptureForm() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4">Ready for Smart Financing?</h2>
-            <p className="text-xl opacity-90">Submit your pre-qualification - Processed through FDM Home</p>
+            <p className="text-xl opacity-90">Submit your pre-qualification - Processed through trusted lending partners</p>
           </motion.div>
 
           <motion.div

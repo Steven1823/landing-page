@@ -18,7 +18,7 @@ const propertyLinks = [
 const serviceLinks = [
   "Pre-Qualification",
   "DSCR Calculator",
-  "FDM Processing", 
+  "Loan Processing", 
   "Investor Support",
 ];
 
@@ -35,7 +35,7 @@ export default function Footer() {
           >
             <h3 className="text-2xl font-poppins font-bold gradient-text mb-4">Kirril Mortgages</h3>
             <p className="text-gray-400 mb-4">
-              Smart mortgage funnels for the self-made. Specialized financing backed by FDM Home.
+              Smart mortgage funnels for the self-made. Specialized financing backed by institutional partners.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -116,7 +116,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p>&copy; 2024 Kirril Mortgages. All rights reserved. | Privacy Policy | Terms of Service | Powered by FDM Home</p>
+          <p>&copy; 2024 Kirril Mortgages. All rights reserved. | Privacy Policy | Terms of Service</p>
         </motion.div>
       </div>
     </footer>

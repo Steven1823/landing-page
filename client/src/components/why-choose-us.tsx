@@ -15,8 +15,8 @@ const features = [
   },
   {
     icon: Shield,
-    title: "FDM Partnership",
-    description: "All loans processed through Fidelity Direct Mortgage for reliable funding"
+    title: "Institutional Backing",
+    description: "All loans processed through trusted institutional partners for reliable funding"
   }
 ];
 
