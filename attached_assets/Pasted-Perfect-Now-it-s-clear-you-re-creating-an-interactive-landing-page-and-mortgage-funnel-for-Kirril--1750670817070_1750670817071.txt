@@ -1,0 +1,120 @@
+Perfect! Now it’s clear: you’re creating an interactive landing page and mortgage funnel for Kirril Mortgages, and the goal is to present it to investors or partners at fdmhome.com — likely to show alignment, tech-forward thinking, and how your funnel can help generate high-quality, investor-grade mortgage leads (especially for DSCR, flippers, self-employed clients, and CPAs).
+
+Here’s your final, investor-ready super prompt to feed into Driplet or any AI web builder, clearly aligned with FDM’s mission and use case:
+
+
+---
+
+🎯 Super Prompt: Kirril Mortgages – Funnel for Investors (FDMHome.com Pitch Version)
+
+Design an animated, interactive mortgage funnel website and landing page for *Kirril Mortgages. This project is intended for **presentation to investors and partners at Fidelity Direct Mortgage (fdmhome.com)* to demonstrate how Kirril Mortgages can drive high-quality loan applications through a digital-first, niche-targeted experience.
+
+🏆 Target Clients:
+- Self-employed entrepreneurs
+- Real estate flippers
+- Long-term property investors
+- CPAs and financial advisors
+- Business owners buying through LLCs
+
+🎯 Funnel Goals:
+- Showcase how Kirril Mortgages can pre-qualify leads with or without traditional income docs
+- Educate users on DSCR and flexible financing options
+- Capture applications for processing through *FDM Home*
+
+🎨 Design Requirements:
+- Premium, trustworthy look (Investor-friendly UI)
+- Brand: Kirril Mortgages
+- Colors: Deep navy, gold accents, off-white
+- Fonts: Poppins + Playfair Display or Inter
+- Motion: Subtle animations (parallax, icon motion, Lottie integration)
+
+📐 Page Structure:
+
+1. *Hero Section*
+   - Background with animated cityscape or house motion
+   - Title: “Smart Mortgage Funnels for the Self-Made”
+   - Subtitle: “Built for flippers, investors, and entrepreneurs”
+   - CTA: Start Pre‑Qualification
+   - Animated CTA button + smooth entry effects
+
+2. *Investor-Focused Intro*
+   - A few bullet points or animated blurbs explaining:
+     • FDM-aligned DSCR loan flow
+     • Lead filtering via online calculators
+     • Auto-routing forms for backend processing
+
+3. *Who We Help*
+   - Self-Employed (bank statement loans)
+   - Flippers (fast-turn loans)
+   - Real estate investors (DSCR-based)
+   - CPAs (multi-client tools, referral-friendly)
+   - Business buyers (LLC/Entity Loans)
+   - Show icons for each with slide-in animation
+
+4. *Loan Products Section*
+   - *DSCR Loans*: No income docs, qualifies on property income (≥1.25)
+   - *Bank Statement Loans*: 12–24 months deposits accepted
+   - *LLC Mortgages*: Entity-based lending, title/loan in business name
+   - *Fix & Flip*: Fast-close, rehab-friendly loans
+   - Include animated badges: “No W‑2s,” “Investor-Ready,” “FDM Verified”
+
+5. *DSCR Calculator Embed*
+   - Input fields: NOI, Monthly Debt
+   - Real-time DSCR score with animation
+   - CTA: Submit My Loan Inquiry
+
+6. *Lead Funnel Form*
+   - Multi-step wizard: About You > Property > Financing Need > Contact
+   - Automatically tagged (Investor, Flipper, Self-Employed, CPA)
+   - Post-submit CTA: “Ready for Processing – Powered by FDM”
+
+7. *Trust & Integration Section*
+   - FDM Partnership badge
+   - Animated quote/testimonial: “Backed by Fidelity Direct Mortgage”
+   - Optional logo wall of trusted processors or partners
+
+8. *Client Stories / Testimonials*
+   - Flipper: “Closed in 10 days, no tax returns needed”
+   - CPA: “Smart tool for advising clients”
+   - Animated slider or fade reveal
+
+9. *Sticky Nav + WhatsApp Chat*
+   - Nav with auto-highlight on scroll
+   - Floating chat CTA: “Ask About DSCR Approval”
+
+10. *Footer*
+    - Kirril Mortgages contact info
+    - Embedded link to FDMHome.com
+    - Newsletter, FAQs, mortgage glossary
+
+
+---
+
+✅ After You Paste It in Driplet, Say:
+
+“Make this investor-ready for a pitch to Fidelity Direct Mortgage.”
+
+“Emphasize that Kirril Mortgages funnels feed directly into FDM’s processing model.”
+
+“Add DSCR logic, bank statement flow, and business-only buyer language.”
+
+
+
+---
+
+🧠 Bonus: Pitch Summary for Slide or Intro
+
+If you're also pitching in person or with a deck, here’s a short blurb:
+
+> Kirril Mortgages is a lead generation and digital intake brand designed for non-traditional borrowers — from flippers to CPAs — with a backend pipeline optimized for FDM Home’s mortgage processing model. We pre-screen applicants via smart forms, DSCR calculators, and profile tagging, so FDM receives ready-to-process investor-grade mortgage leads.
+
+
+
+
+---
+
+Would you like:
+
+A matching PowerPoint/Canva pitch slide?
+
+Or an actual working HTML prototype of the DSCR calculator?

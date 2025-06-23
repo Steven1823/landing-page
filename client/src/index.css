@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
   --background: hsl(0, 0%, 100%);
@@ -26,12 +26,14 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  /* Custom colors for real estate theme */
+  /* Custom colors for mortgage theme */
   --gold: hsl(45, 86%, 60%);
   --cream: hsl(30, 67%, 94%);
   --navy: hsl(220, 47%, 17%);
   --charcoal: hsl(210, 29%, 24%);
   --warm-gray: hsl(30, 14%, 52%);
+  --fdm-blue: hsl(214, 100%, 97%);
+  --success-green: hsl(142, 76%, 36%);
 }
 
 .dark {

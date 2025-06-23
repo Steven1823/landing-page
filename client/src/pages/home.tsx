@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
-import FeaturedListings from "@/components/featured-listings";
+import LoanProducts from "@/components/loan-products";
+import DSCRCalculator from "@/components/dscr-calculator";
 import WhyChooseUs from "@/components/why-choose-us";
 import LeadCaptureForm from "@/components/lead-capture-form";
 import Footer from "@/components/footer";
@@ -13,7 +14,8 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Navigation />
       <HeroSection />
-      <FeaturedListings />
+      <LoanProducts />
+      <DSCRCalculator />
       <WhyChooseUs />
       <LeadCaptureForm />
       <Footer />

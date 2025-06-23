@@ -12,9 +12,18 @@ export const leads = pgTable("leads", {
   id: serial("id").primaryKey(),
   fullName: text("full_name").notNull(),
   email: text("email").notNull(),
-  budgetRange: text("budget_range"),
-  preferredLocation: text("preferred_location"),
-  additionalRequirements: text("additional_requirements"),
+  phone: text("phone"),
+  clientType: text("client_type"), // Self-Employed, Flipper, Investor, CPA, Business Owner
+  loanType: text("loan_type"), // DSCR, Bank Statement, LLC Mortgage, Fix & Flip
+  propertyType: text("property_type"), // Investment, Primary, Second Home, Commercial
+  loanAmount: integer("loan_amount"),
+  monthlyIncome: integer("monthly_income"),
+  propertyValue: integer("property_value"),
+  downPayment: integer("down_payment"),
+  creditScore: text("credit_score"),
+  timeframe: text("timeframe"),
+  additionalNotes: text("additional_notes"),
+  dscrScore: text("dscr_score"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 

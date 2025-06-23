@@ -18,6 +18,11 @@ import { buttonHover } from "@/lib/animations";
 const formSchema = insertLeadSchema.extend({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
+  phone: z.string().min(10, "Please enter a valid phone number").optional(),
+  clientType: z.string().min(1, "Please select a client type"),
+  loanType: z.string().min(1, "Please select a loan type"),
+  loanAmount: z.number().min(50000, "Minimum loan amount is $50,000").optional(),
+  creditScore: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -31,9 +36,18 @@ export default function LeadCaptureForm() {
     defaultValues: {
       fullName: "",
       email: "",
-      budgetRange: "",
-      preferredLocation: "",
-      additionalRequirements: "",
+      phone: "",
+      clientType: "",
+      loanType: "",
+      propertyType: "",
+      loanAmount: undefined,
+      monthlyIncome: undefined,
+      propertyValue: undefined,
+      downPayment: undefined,
+      creditScore: "",
+      timeframe: "",
+      additionalNotes: "",
+      dscrScore: "",
     },
   });
 
@@ -104,8 +118,8 @@ export default function LeadCaptureForm() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4">Ready to Find Your Dream Home?</h2>
-            <p className="text-xl opacity-90">Tell us what you're looking for and we'll match you with perfect properties</p>
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4">Ready for Smart Financing?</h2>
+            <p className="text-xl opacity-90">Submit your pre-qualification - Processed through FDM Home</p>
           </motion.div>
 
           <motion.div
@@ -153,37 +167,15 @@ export default function LeadCaptureForm() {
 
                 <FormField
                   control={form.control}
-                  name="budgetRange"
+                  name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white">Budget Range</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-gold">
-                            <SelectValue placeholder="Select budget range" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="1-2M">$1M - $2M</SelectItem>
-                          <SelectItem value="2-5M">$2M - $5M</SelectItem>
-                          <SelectItem value="5-10M">$5M - $10M</SelectItem>
-                          <SelectItem value="10M+">$10M+</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="preferredLocation"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white">Preferred Location</FormLabel>
+                      <FormLabel className="text-white">Phone Number</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
-                          placeholder="Enter location"
+                          type="tel"
+                          placeholder="Enter your phone"
                           className="bg-white/10 border-white/20 text-white placeholder-white/60 focus:border-gold"
                         />
                       </FormControl>
@@ -193,15 +185,81 @@ export default function LeadCaptureForm() {
 
                 <FormField
                   control={form.control}
-                  name="additionalRequirements"
+                  name="clientType"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white">Client Type</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-gold">
+                            <SelectValue placeholder="Select client type" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="Self-Employed">Self-Employed</SelectItem>
+                          <SelectItem value="Flipper">Real Estate Flipper</SelectItem>
+                          <SelectItem value="Investor">Property Investor</SelectItem>
+                          <SelectItem value="CPA">CPA/Financial Advisor</SelectItem>
+                          <SelectItem value="Business Owner">Business Owner</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="loanType"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white">Loan Type</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-gold">
+                            <SelectValue placeholder="Select loan type" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="DSCR">DSCR Loan</SelectItem>
+                          <SelectItem value="Bank Statement">Bank Statement Loan</SelectItem>
+                          <SelectItem value="LLC Mortgage">LLC Mortgage</SelectItem>
+                          <SelectItem value="Fix & Flip">Fix & Flip Loan</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="loanAmount"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white">Loan Amount</FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          type="number"
+                          placeholder="$500,000"
+                          onChange={(e) => field.onChange(e.target.value ? Number(e.target.value) : undefined)}
+                          className="bg-white/10 border-white/20 text-white placeholder-white/60 focus:border-gold"
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="additionalNotes"
                   render={({ field }) => (
                     <FormItem className="md:col-span-2">
-                      <FormLabel className="text-white">Additional Requirements</FormLabel>
+                      <FormLabel className="text-white">Additional Notes</FormLabel>
                       <FormControl>
                         <Textarea
                           {...field}
                           rows={4}
-                          placeholder="Tell us about your dream home..."
+                          placeholder="Tell us about your financing needs..."
                           className="bg-white/10 border-white/20 text-white placeholder-white/60 focus:border-gold"
                         />
                       </FormControl>
@@ -217,7 +275,7 @@ export default function LeadCaptureForm() {
                       className="w-full bg-gold text-navy py-4 text-lg font-semibold hover:bg-yellow-300 animate-glow"
                       size="lg"
                     >
-                      {mutation.isPending ? "Submitting..." : "Find My Dream Home"}{" "}
+                      {mutation.isPending ? "Submitting..." : "Submit Pre-Qualification"}{" "}
                       <Send className="ml-2 h-5 w-5" />
                     </Button>
                   </motion.div>

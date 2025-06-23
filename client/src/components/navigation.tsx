@@ -57,7 +57,7 @@ export default function Navigation() {
             className="text-2xl font-poppins font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
-            PremiumHomes
+            Kirril Mortgages
           </motion.div>
           
           <div className="hidden md:flex space-x-8">
@@ -68,22 +68,22 @@ export default function Navigation() {
               Home
             </button>
             <button 
-              onClick={() => scrollToSection("listings")}
+              onClick={() => scrollToSection("loans")}
               className="text-charcoal hover:text-gold transition-colors duration-300"
             >
-              Listings
+              Loan Products
             </button>
             <button 
-              onClick={() => scrollToSection("about")}
+              onClick={() => scrollToSection("calculator")}
               className="text-charcoal hover:text-gold transition-colors duration-300"
             >
-              About
+              DSCR Calculator
             </button>
             <button 
               onClick={() => scrollToSection("contact")}
               className="text-charcoal hover:text-gold transition-colors duration-300"
             >
-              Contact
+              Pre-Qualify
             </button>
           </div>
           

@@ -9,17 +9,17 @@ const socialLinks = [
 ];
 
 const propertyLinks = [
-  "Luxury Homes",
-  "Penthouses", 
-  "Waterfront",
-  "Commercial",
+  "DSCR Loans",
+  "Bank Statement", 
+  "LLC Mortgages",
+  "Fix & Flip",
 ];
 
 const serviceLinks = [
-  "Property Search",
-  "Market Analysis",
-  "Investment Advice", 
-  "Property Management",
+  "Pre-Qualification",
+  "DSCR Calculator",
+  "FDM Processing", 
+  "Investor Support",
 ];
 
 export default function Footer() {
@@ -33,9 +33,9 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-poppins font-bold gradient-text mb-4">PremiumHomes</h3>
+            <h3 className="text-2xl font-poppins font-bold gradient-text mb-4">Kirril Mortgages</h3>
             <p className="text-gray-400 mb-4">
-              Your gateway to luxury living. Discover exceptional properties in the world's most desirable locations.
+              Smart mortgage funnels for the self-made. Specialized financing backed by FDM Home.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -58,7 +58,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-lg font-semibold mb-4">Properties</h4>
+            <h4 className="text-lg font-semibold mb-4">Loan Products</h4>
             <ul className="space-y-2 text-gray-400">
               {propertyLinks.map((link) => (
                 <li key={link}>
@@ -116,7 +116,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p>&copy; 2024 PremiumHomes. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; 2024 Kirril Mortgages. All rights reserved. | Privacy Policy | Terms of Service | Powered by FDM Home</p>
         </motion.div>
       </div>
     </footer>

@@ -5,18 +5,18 @@ import { staggerChildren, fadeInUp } from "@/lib/animations";
 const features = [
   {
     icon: Crown,
-    title: "Premium Properties",
-    description: "Curated selection of the finest luxury properties in prime locations worldwide"
+    title: "No Income Docs",
+    description: "DSCR and bank statement loans without traditional W-2 or tax return requirements"
   },
   {
     icon: Users,
-    title: "Expert Team",
-    description: "Dedicated professionals with decades of experience in luxury real estate"
+    title: "Specialized Expertise",
+    description: "Dedicated team focused on self-employed, investor, and business owner financing"
   },
   {
     icon: Shield,
-    title: "Trusted Service",
-    description: "Comprehensive support from initial viewing to final transaction and beyond"
+    title: "FDM Partnership",
+    description: "All loans processed through Fidelity Direct Mortgage for reliable funding"
   }
 ];
 
@@ -31,9 +31,9 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4">Why Choose PremiumHomes</h2>
+          <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4">Why Choose Kirril Mortgages</h2>
           <p className="text-xl text-warm-gray max-w-2xl mx-auto">
-            Experience unparalleled service and expertise in luxury real estate
+            Specialized financing solutions for non-traditional borrowers
           </p>
         </motion.div>
 

@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { fadeInUp, buttonHover } from "@/lib/animations";
 
 export default function HeroSection() {
-  const scrollToListings = () => {
-    const element = document.getElementById("listings");
+  const scrollToPrequalify = () => {
+    const element = document.getElementById("contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -46,9 +46,8 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Find Your{" "}
-            <span className="gradient-text">Dream Home</span>{" "}
-            Today
+            Smart Mortgage Funnels for the{" "}
+            <span className="gradient-text">Self-Made</span>
           </motion.h1>
           
           <motion.p 
@@ -57,7 +56,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Explore premium listings. Get matched with your ideal property in the most sought-after locations.
+            Built for flippers, investors, and entrepreneurs. No W-2s required.
           </motion.p>
           
           <motion.div
@@ -67,11 +66,11 @@ export default function HeroSection() {
           >
             <motion.div {...buttonHover}>
               <Button
-                onClick={scrollToListings}
+                onClick={scrollToPrequalify}
                 className="bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-charcoal animate-glow"
                 size="lg"
               >
-                Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                Start Pre-Qualification <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
           </motion.div>
@@ -83,7 +82,7 @@ export default function HeroSection() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        onClick={scrollToListings}
+        onClick={scrollToPrequalify}
       >
         <ChevronDown className="h-8 w-8 text-warm-gray" />
       </motion.div>
