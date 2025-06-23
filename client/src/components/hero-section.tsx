@@ -1,9 +1,39 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { fadeInUp, buttonHover } from "@/lib/animations";
+import { useEffect } from "react";
 
 export default function HeroSection() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Create parallax transforms for different houses
+  const house1X = useTransform(mouseX, [0, 1000], [0, 30]);
+  const house1Y = useTransform(mouseY, [0, 1000], [0, 20]);
+  
+  const house2X = useTransform(mouseX, [0, 1000], [0, -25]);
+  const house2Y = useTransform(mouseY, [0, 1000], [0, 15]);
+  
+  const house3X = useTransform(mouseX, [0, 1000], [0, 20]);
+  const house3Y = useTransform(mouseY, [0, 1000], [0, -18]);
+  
+  const house4X = useTransform(mouseX, [0, 1000], [0, -15]);
+  const house4Y = useTransform(mouseY, [0, 1000], [0, 25]);
+  
+  const house5X = useTransform(mouseX, [0, 1000], [0, 35]);
+  const house5Y = useTransform(mouseY, [0, 1000], [0, -22]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
   const scrollToPrequalify = () => {
     const element = document.getElementById("contact");
     if (element) {
@@ -21,14 +51,9 @@ export default function HeroSection() {
         {/* House 1 - Top right */}
         <motion.div 
           className="absolute top-16 right-20 w-32 h-32"
-          animate={{ 
-            x: [0, -20, 0],
-            y: [-10, 10, -10] 
-          }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          style={{
+            x: house1X,
+            y: house1Y
           }}
         >
           <div className="relative w-full h-full">
@@ -49,15 +74,9 @@ export default function HeroSection() {
         {/* House 2 - Middle left */}
         <motion.div 
           className="absolute top-1/3 left-16 w-24 h-24"
-          animate={{ 
-            x: [0, 15, 0],
-            y: [10, -10, 10] 
-          }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 1
+          style={{
+            x: house2X,
+            y: house2Y
           }}
         >
           <div className="relative w-full h-full">
@@ -78,15 +97,9 @@ export default function HeroSection() {
         {/* House 3 - Bottom right */}
         <motion.div 
           className="absolute bottom-32 right-32 w-28 h-28"
-          animate={{ 
-            x: [-10, 10, -10],
-            y: [0, -15, 0] 
-          }}
-          transition={{ 
-            duration: 10, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 2
+          style={{
+            x: house3X,
+            y: house3Y
           }}
         >
           <div className="relative w-full h-full">
@@ -108,15 +121,9 @@ export default function HeroSection() {
         {/* House 4 - Top left */}
         <motion.div 
           className="absolute top-24 left-32 w-20 h-20"
-          animate={{ 
-            x: [5, -5, 5],
-            y: [-5, 15, -5] 
-          }}
-          transition={{ 
-            duration: 7, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 3
+          style={{
+            x: house4X,
+            y: house4Y
           }}
         >
           <div className="relative w-full h-full">
@@ -137,15 +144,9 @@ export default function HeroSection() {
         {/* House 5 - Center right */}
         <motion.div 
           className="absolute top-1/2 right-12 w-36 h-36 hidden lg:block"
-          animate={{ 
-            x: [-15, 15, -15],
-            y: [8, -8, 8] 
-          }}
-          transition={{ 
-            duration: 9, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 1.5
+          style={{
+            x: house5X,
+            y: house5Y
           }}
         >
           <div className="relative w-full h-full">

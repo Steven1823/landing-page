@@ -116,7 +116,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p>&copy; 2024 Kirril Mortgages. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; 2025 Kirril Mortgages. All rights reserved. | Privacy Policy | Terms of Service</p>
         </motion.div>
       </div>
     </footer>
