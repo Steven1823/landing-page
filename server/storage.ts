@@ -1,6 +1,4 @@
-import { users, leads, properties, type User, type InsertUser, type Lead, type InsertLead, type Property, type InsertProperty } from "@shared/schema";
-import { db } from "./db";
-import { eq } from "drizzle-orm";
+import { type User, type InsertUser, type Lead, type InsertLead, type Property, type InsertProperty } from "@shared/schema";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -10,62 +8,6 @@ export interface IStorage {
   getLeads(): Promise<Lead[]>;
   getFeaturedProperties(): Promise<Property[]>;
   getAllProperties(): Promise<Property[]>;
-}
-
-export class DatabaseStorage implements IStorage {
-  async getUser(id: number): Promise<User | undefined> {
-    const [user] = await db.select().from(users).where(eq(users.id, id));
-    return user || undefined;
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    const [user] = await db.select().from(users).where(eq(users.username, username));
-    return user || undefined;
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const [user] = await db
-      .insert(users)
-      .values(insertUser)
-      .returning();
-    return user;
-  }
-
-  async createLead(insertLead: InsertLead): Promise<Lead> {
-    const leadData = {
-      ...insertLead,
-      phone: insertLead.phone || null,
-      clientType: insertLead.clientType || null,
-      loanType: insertLead.loanType || null,
-      propertyType: insertLead.propertyType || null,
-      loanAmount: insertLead.loanAmount || null,
-      monthlyIncome: insertLead.monthlyIncome || null,
-      propertyValue: insertLead.propertyValue || null,
-      downPayment: insertLead.downPayment || null,
-      creditScore: insertLead.creditScore || null,
-      timeframe: insertLead.timeframe || null,
-      additionalNotes: insertLead.additionalNotes || null,
-      dscrScore: insertLead.dscrScore || null,
-    };
-    
-    const [lead] = await db
-      .insert(leads)
-      .values(leadData)
-      .returning();
-    return lead;
-  }
-
-  async getLeads(): Promise<Lead[]> {
-    return await db.select().from(leads);
-  }
-
-  async getFeaturedProperties(): Promise<Property[]> {
-    return await db.select().from(properties).where(eq(properties.featured, true));
-  }
-
-  async getAllProperties(): Promise<Property[]> {
-    return await db.select().from(properties);
-  }
 }
 
 export class MemStorage implements IStorage {
@@ -194,4 +136,4 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new DatabaseStorage();
+export const storage = new MemStorage();
