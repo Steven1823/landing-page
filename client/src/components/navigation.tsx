@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { LogOut, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-interface NavigationProps {
-  onLoginClick: () => void;
-  onSignupClick: () => void;
-}
+import { useAuth } from "@/lib/auth";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { user, logout, isAuthenticated } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +38,10 @@ export default function Navigation() {
       modal.classList.remove("hidden");
       document.body.style.overflow = "hidden";
     }
+  };
+
+  const handleLogout = () => {
+    logout();
   };
 
   return (
@@ -88,21 +90,42 @@ export default function Navigation() {
           </div>
           
           <div className="flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              onClick={openLoginModal}
-              className="text-charcoal hover:text-gold"
-            >
-              Login
-            </Button>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                onClick={openSignupModal}
-                className="bg-gold text-navy hover:bg-yellow-300 font-medium rounded-full px-6"
-              >
-                Sign Up
-              </Button>
-            </motion.div>
+            {isAuthenticated ? (
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2 text-charcoal">
+                  <User className="h-4 w-4" />
+                  <span className="text-sm">Welcome, {user?.username}</span>
+                </div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    onClick={handleLogout}
+                    variant="outline"
+                    className="text-charcoal hover:text-gold border-charcoal hover:border-gold"
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Logout
+                  </Button>
+                </motion.div>
+              </div>
+            ) : (
+              <>
+                <Button
+                  variant="ghost"
+                  onClick={openLoginModal}
+                  className="text-charcoal hover:text-gold"
+                >
+                  Login
+                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    onClick={openSignupModal}
+                    className="bg-gold text-navy hover:bg-yellow-300 font-medium rounded-full px-6"
+                  >
+                    Sign Up
+                  </Button>
+                </motion.div>
+              </>
+            )}
           </div>
         </div>
       </div>

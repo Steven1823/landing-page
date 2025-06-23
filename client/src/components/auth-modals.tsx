@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/lib/auth";
 
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -32,6 +33,7 @@ type SignupData = z.infer<typeof signupSchema>;
 
 export default function AuthModals() {
   const { toast } = useToast();
+  const { login } = useAuth();
 
   const loginForm = useForm<LoginData>({
     resolver: zodResolver(loginSchema),
@@ -74,21 +76,39 @@ export default function AuthModals() {
   };
 
   const onLogin = (data: LoginData) => {
-    // Dummy login - just show success message
+    // Simulate successful login
+    const userData = {
+      id: 1,
+      username: data.email.split('@')[0], // Use part of email as username
+      email: data.email,
+    };
+    
+    login(userData);
+    
     toast({
       title: "Login successful!",
-      description: "Welcome back to PremiumHomes.",
+      description: "Welcome back to Kirril Mortgages.",
     });
+    
     closeModal("loginModal");
     loginForm.reset();
   };
 
   const onSignup = (data: SignupData) => {
-    // Dummy signup - just show success message
+    // Simulate successful signup
+    const userData = {
+      id: 1,
+      username: `${data.firstName} ${data.lastName}`,
+      email: data.email,
+    };
+    
+    login(userData);
+    
     toast({
       title: "Account created!",
-      description: "Welcome to PremiumHomes. You can now explore our premium properties.",
+      description: "Welcome to Kirril Mortgages. You can now explore our mortgage products.",
     });
+    
     closeModal("signupModal");
     signupForm.reset();
   };
@@ -208,7 +228,7 @@ export default function AuthModals() {
           </button>
 
           <div className="text-center mb-6">
-            <h3 className="text-2xl font-poppins font-bold mb-2">Join PremiumHomes</h3>
+            <h3 className="text-2xl font-poppins font-bold mb-2">Join Kirril Mortgages</h3>
             <p className="text-warm-gray">Create your account</p>
           </div>
 
