@@ -3,8 +3,8 @@ import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppWidget() {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "15551234567";
-    const message = "Hi! I'm interested in DSCR loans and mortgage products";
+    const phoneNumber = "15712760986";
+    const message = "Hi Kirril! I'm interested in DSCR loans and mortgage products";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };

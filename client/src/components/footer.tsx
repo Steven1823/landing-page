@@ -97,13 +97,13 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-3 text-gray-400">
               <p className="flex items-center">
-                <Phone className="h-4 w-4 mr-2" /> +1 (555) 123-4567
+                <Phone className="h-4 w-4 mr-2" /> +1 (571) 276-0986
               </p>
               <p className="flex items-center">
-                <Mail className="h-4 w-4 mr-2" /> info@premiumhomes.com
+                <Mail className="h-4 w-4 mr-2" /> kirillrealtor@gmail.com
               </p>
               <p className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2" /> 123 Luxury Ave, Beverly Hills, CA
+                <MapPin className="h-4 w-4 mr-2" /> Washington, DC Metro Area
               </p>
             </div>
           </motion.div>
