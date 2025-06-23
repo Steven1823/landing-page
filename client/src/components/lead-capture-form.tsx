@@ -258,6 +258,7 @@ export default function LeadCaptureForm() {
                       <FormControl>
                         <Textarea
                           {...field}
+                          value={field.value || ""}
                           rows={4}
                           placeholder="Tell us about your financing needs..."
                           className="bg-white/10 border-white/20 text-white placeholder-white/60 focus:border-gold"
