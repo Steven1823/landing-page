@@ -1,0 +1,70 @@
+# GitHub Copilot Workspace Configuration
+# This file helps Copilot understand the project structure and context
+
+name: "Kirril Mortgages"
+description: "Interactive mortgage funnel for real estate investors and self-employed professionals"
+
+# Project metadata
+project:
+  type: "web-application"
+  framework: "react"
+  language: "typescript"
+  domain: "fintech-mortgage"
+  
+# Business context
+business:
+  industry: "mortgage-lending"
+  target_audience: "real-estate-investors"
+  specialization: "non-traditional-income-verification"
+  
+# Technical stack
+tech_stack:
+  frontend:
+    - "react-18"
+    - "typescript"
+    - "tailwindcss"
+    - "framer-motion"
+    - "shadcn-ui"
+  backend:
+    - "express"
+    - "nodejs"
+    - "in-memory-storage"
+  validation:
+    - "zod"
+    - "react-hook-form"
+  build:
+    - "vite"
+    - "esbuild"
+
+# Key features
+features:
+  - "dscr-calculator"
+  - "lead-capture-forms"
+  - "mortgage-products"
+  - "authentication"
+  - "responsive-design"
+  - "whatsapp-integration"
+
+# Code patterns
+patterns:
+  - "functional-components"
+  - "typescript-strict"
+  - "tailwind-utility-first"
+  - "zod-validation"
+  - "framer-motion-animations"
+
+# Important files
+key_files:
+  - "client/src/components/dscr-calculator.tsx"
+  - "client/src/components/lead-capture-form.tsx"
+  - "client/src/components/navigation.tsx"
+  - "shared/schema.ts"
+  - "server/routes.ts"
+
+# Business rules
+business_rules:
+  dscr_minimum: 1.25
+  contact_phone: "+1 (571) 276-0986"
+  contact_email: "kirillrealtor@gmail.com"
+  business_owner: "Kirril"
+  service_area: "Washington DC Metro"
