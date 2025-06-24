@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 import AuthModals from "@/components/auth-modals";
 import VideoModal from "@/components/video-modal";
 import WhatsAppWidget from "@/components/whatsapp-widget";
+import AIChatbot from "@/components/ai-chatbot";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <AuthModals />
       <VideoModal />
       <WhatsAppWidget />
+      <AIChatbot />
     </div>
   );
 }
